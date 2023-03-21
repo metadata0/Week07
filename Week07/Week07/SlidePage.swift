@@ -12,8 +12,6 @@ struct SlidePage: View {
     @StateObject var imgSlides = ImageManager()
     @State var imgName: String? = nil
     
-    @State var img: UIImage? = nil
-    
     var body: some View {
         VStack {
             if let name = imgSlides.slideParent[imgSlides.parentIndex][imgSlides.subIndex] {
