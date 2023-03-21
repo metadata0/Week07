@@ -12,16 +12,14 @@ struct SlidePage: View {
     @StateObject var imgSlides = ImageManager()
     @State var imgName: String? = nil
     
+    @State var img: UIImage? = nil
+    
     var body: some View {
         VStack {
             if let name = imgSlides.slideParent[imgSlides.parentIndex][imgSlides.subIndex] {
                 SlideView(name: name)
+                //UIImage(contentsOfFile: name)
             }
-        }
-        VStack {
-            Image("1.png")
-                .resizable()
-                .scaledToFit()
         }
         
     //--------quote from sample code--------
@@ -63,9 +61,7 @@ struct SlidePage: View {
 struct SlideView: View {
     var name: String
     var body: some View {
-        Image(name)
-            .resizable()
-            .scaledToFit()
+        UIImage(contentsOfFile: name)
         Text(name)
     }
 }

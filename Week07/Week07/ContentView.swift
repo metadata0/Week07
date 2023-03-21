@@ -8,6 +8,10 @@
 import SwiftUI
 import CoreData
 
+
+// learn how to use unwrap optional values on unwrap
+// learn how to use "guard" and "if let" when dealing with optional value
+
 class ImageManager: ObservableObject {
     let slides1 = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"]
     let slides2 = ["2.png", "3.png", "4.png", "5.png"]
@@ -20,18 +24,17 @@ class ImageManager: ObservableObject {
 //
 //    @Published var selectedImgName: String? = nil
 //    trying to initialize variables to non-optional values?
-
     
     @Published var parentIndex: Int = 0
     @Published var subIndex: Int = 0
     
     @Published var selectedImgName: String = ""
     
+    
     init() {
         //self.parentIndex = 0
         //self.subIndex = 0
         self.selectedImgName = slideParent[self.parentIndex][self.subIndex]
-        
     }
 }
 
