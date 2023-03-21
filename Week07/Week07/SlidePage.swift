@@ -61,7 +61,7 @@ struct SlidePage: View {
 struct SlideView: View {
     var name: String
     var body: some View {
-        UIImage(contentsOfFile: name)
+        Image(name)
         Text(name)
     }
 }
